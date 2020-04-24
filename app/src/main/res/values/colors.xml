@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="theme_color">#2250B5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="login_hint">#c4d3eb</color>
+    <color name="court_devide">#FFFFFF</color>
+    <color name="press_blue">#0482DF</color>
+    <color name="black">#333333</color>
+    <color name="divider">#eeeeee</color>
+</resources>

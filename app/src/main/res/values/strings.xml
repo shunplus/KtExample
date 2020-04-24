@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name_hobby">KotlinxApp</string>
+
+    <string name="service_error">服务器出错啦~~~</string>
+    <string name="not_found">请求的资源不存在~~~</string>
+    <string name="timeout">请求超时~~~</string>
+    <string name="unknown_error">未知错误~~~</string>
+    <string name="network_error">网络有问题~~~</string>
+    <string name="login_title">人民法院移动执行平台</string>
+    <string name="hint_user_name">请输入用户名</string>
+    <string name="hint_password">请输入密码</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="tell_phone">客服电话：4009203699</string>
+    <string name="brief_introduction">人民法院移动执行平台简介</string>
+</resources>
