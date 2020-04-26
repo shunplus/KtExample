@@ -18,10 +18,10 @@ class NewsMoreActivity : BaseActivity() {
 
     override fun initView() {
         mContext = this
-        TODO("Not yet implemented")
+
     }
 
     override fun initData() {
-        TODO("Not yet implemented")
+
     }
 }
