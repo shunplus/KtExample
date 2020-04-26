@@ -37,6 +37,7 @@ class MainActivity : BaseActivity() {
         mContext=this
         login_out.setOnClickListener(onClickListener)
         switch_account.setOnClickListener(onClickListener)
+        tv_more_news.setOnClickListener(onClickListener)
         topView.setBackVisiable(View.GONE)
         //设置内置样式，共有六种可以点入方法内逐一体验使用。
         banner.setDelayTime(3000)
@@ -54,6 +55,10 @@ class MainActivity : BaseActivity() {
 
         banner.setOnBannerListener { data, position ->
             var bannerData:BannerData= data as BannerData
+
+            var intent = Intent(mContext, NewsDetailsActivity::class.java)
+            intent.putExtra("loadUrl", (data as BannerData).ID)
+            startActivity(intent)
            PLog.i(PLog.TAG," data ${bannerData.ID}")
         }
         banner.start()
@@ -78,6 +83,10 @@ class MainActivity : BaseActivity() {
                 var intent= Intent(mContext, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
+            }
+
+            R.id.tv_more_news -> {
+                
             }
         }
     }

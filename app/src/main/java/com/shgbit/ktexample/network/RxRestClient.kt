@@ -2,6 +2,7 @@ package com.shgbit.ktexample.network
 
 import com.shgbit.ktexample.BuildConfig
 import com.shgbit.ktexample.api.RxRestServiceApi
+import com.shgbit.ktexample.app.Constants
 import com.shgbit.ktexample.util.PLog
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -46,7 +47,7 @@ class RxRestClient private constructor(){
 
          retrofit = Retrofit.Builder()
 //            .baseUrl("https://iexe.shgbitcloud.com/")
-            .baseUrl("https://gistest.shgbitcloud.com/")
+             .baseUrl(Constants.HOST)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(okHttpClient)

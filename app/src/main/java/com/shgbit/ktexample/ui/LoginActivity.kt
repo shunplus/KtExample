@@ -36,10 +36,10 @@ class LoginActivity :BaseActivity() {
     //private var variable: String by Preference("keyName", "10")
 
     lateinit var mContext:Context
-    lateinit var courtIdv:String
-    lateinit var courtNamev:String
-    lateinit var paswordv:String
-    lateinit var usernamev:String
+    var courtIdv: String = ""
+    var courtNamev: String = ""
+    var paswordv: String = ""
+    var usernamev: String = ""
     var isChecked:Boolean=true
     override fun getLayoutId(): Int {
       return R.layout.activity_login_layout
@@ -52,10 +52,7 @@ class LoginActivity :BaseActivity() {
         cb_remember_pwd.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener{
             override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
                 this@LoginActivity.isChecked =!isChecked
-
-                if(isChecked){
-                    pasword=paswordv
-                }else{
+                if (!isChecked) {
                     pasword=""
                 }
             }
@@ -76,7 +73,9 @@ class LoginActivity :BaseActivity() {
         if (pasword.isNotBlank()){
             et_password.setText(pasword)
         }
-        courtIdv=courtId
+        if (courtId.isNotBlank()) {
+            courtIdv = courtId
+        }
     }
 
     private val onClickListener= View.OnClickListener {
@@ -96,6 +95,7 @@ class LoginActivity :BaseActivity() {
                  */
                 paswordv=et_password.text.toString()
                 usernamev=et_username.text.toString()
+                courtNamev = tv_court.text.toString()
                 if(courtIdv.isBlank()){
                 CustomToast.showToastMultipleClicks("请选择法院")
                     return@OnClickListener
@@ -136,6 +136,7 @@ class LoginActivity :BaseActivity() {
                         },
                         {
                                 e->Log.e(PLog.TAG," failure $e")
+                            CustomToast.showToastMultipleClicks("登录失败")
                         }
                     )
 
