@@ -86,7 +86,8 @@ object CoroutinesTest {
 
         }
 
-        GlobalScope.launch {
+        GlobalScope.launch() {
+
             delay(1000L)
             PLog.i(TAG, "testCancel do cancel " + System.currentTimeMillis())
             job.cancel()
@@ -113,13 +114,18 @@ object CoroutinesTest {
     //  测试多 任务协程
     fun postItem() {
         GlobalScope.launch {
-            // async { requestToken() } 新建一个协程，可能在另一个线程运行
-            // 但是 await() 是挂起函数，当前协程执行逻辑卡在第一个分支，第一种状态，当 async 的协程执行完后恢复当前协程，才会切换到下一个分支
-            val token = async { requestToken() }.await()
-            // 在第二个分支状态中，又新建一个协程，使用 await 挂起函数将之后代码作为 Continuation 放倒下一个分支状态，直到 async 协程执行完
-            val post = async { login(token) }.await()
-            // 最后一个分支状态，直接在当前协程处理
-            processPost(post)
+
+            //指定运行线程的
+            withContext(Dispatchers.IO) {
+                // async { requestToken() } 新建一个协程，可能在另一个线程运行
+                // 但是 await() 是挂起函数，当前协程执行逻辑卡在第一个分支，第一种状态，当 async 的协程执行完后恢复当前协程，才会切换到下一个分支
+                val token = async { requestToken() }.await()
+                // 在第二个分支状态中，又新建一个协程，使用 await 挂起函数将之后代码作为 Continuation 放倒下一个分支状态，直到 async 协程执行完
+                val post = async { login(token) }.await()
+                // 最后一个分支状态，直接在当前协程处理
+                processPost(post)
+            }
+
         }
     }
 
