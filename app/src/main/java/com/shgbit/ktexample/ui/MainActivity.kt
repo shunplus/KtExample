@@ -14,6 +14,7 @@ import com.shgbit.ktexample.base.BaseActivity
 import com.shgbit.ktexample.bean.BannerData
 import com.shgbit.ktexample.network.NewworkScheduler
 import com.shgbit.ktexample.network.RxRestClient
+import com.shgbit.ktexample.test.CoroutinesTest
 import com.shgbit.ktexample.util.PLog
 import com.trello.rxlifecycle2.android.ActivityEvent
 import com.trello.rxlifecycle2.kotlin.bindUntilEvent
@@ -65,6 +66,11 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initData() {
+        //协程测试入口
+//        CoroutinesTest.test()
+//        CoroutinesTest.testWaitJob()
+//        CoroutinesTest.testCancel()
+        CoroutinesTest.postItem()
         getBanner(  HobbyApplication.userId);
     }
 
