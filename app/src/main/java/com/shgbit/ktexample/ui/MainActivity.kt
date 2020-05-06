@@ -86,7 +86,8 @@ class MainActivity : BaseActivity() {
             }
 
             R.id.tv_more_news -> {
-                
+                var intentMore = Intent(mContext, NewsMoreActivity::class.java)
+                startActivity(intentMore)
             }
         }
     }

@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.shgbit.ktexample.R
 import com.shgbit.ktexample.bean.BannerData
+import com.shgbit.ktexample.util.GlideUtils
 import com.youth.banner.adapter.BannerAdapter
 
 /**
@@ -39,10 +39,11 @@ class ImageNetAdapter(mDatas: List<BannerData?>?, mContext: Context) :
         position: Int,
         size: Int
     ) {
-        holder?.imageView?.let {
-            Glide.with(mContex)
-                .load(data?.FRONT_COVER_IMAGE)
-                .into(it)
-        }
+        GlideUtils.loadImage(
+            mContex,
+            data?.FRONT_COVER_IMAGE.toString(),
+            holder?.imageView as ImageView
+        )
+
     }
 }

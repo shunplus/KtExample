@@ -12,4 +12,6 @@
     <color name="press_blue">#0482DF</color>
     <color name="black">#333333</color>
     <color name="divider">#eeeeee</color>
+    <color name="view_divide">#EEF0F1</color>
+    <color name="text_gray">#999999</color>
 </resources>

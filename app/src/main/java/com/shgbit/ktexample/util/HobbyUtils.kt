@@ -1,4 +1,4 @@
-package com.shgbit.ktexample.view
+package com.shgbit.ktexample.util
 
 import android.content.res.Resources
 

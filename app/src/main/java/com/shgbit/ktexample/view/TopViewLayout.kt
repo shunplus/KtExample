@@ -11,6 +11,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.shgbit.ktexample.R
+import com.shgbit.ktexample.util.HobbyUtils
 
 /**
  * @author xushun on  2020/3/30 16:26.

@@ -7,6 +7,8 @@ package com.shgbit.ktexample.app
  */
 class Constants {
     companion object {
-        var HOST: String = "https://gistest.shgbitcloud.com/"
+        var HOST = "https://gistest.shgbitcloud.com/"
+        var THUMBNAIL =
+            "?spm=a2c4e.11153940.blogcont573781.6.c1032027sQ46VG&x-oss-process=video/snapshot,t_56,m_fast"
     }
 }

@@ -3,6 +3,7 @@ package com.shgbit.ktexample.api
 import com.shgbit.ktexample.bean.BannerDataBean
 import com.shgbit.ktexample.bean.CourtBean
 import com.shgbit.ktexample.bean.LoginBean
+import com.shgbit.ktexample.bean.NewsBeanDataBean
 import io.reactivex.Observable
 import retrofit2.http.*
 import java.util.*
@@ -46,5 +47,16 @@ interface RxRestServiceApi {
     @POST("/iexe/enController/getIndexNewsDataForApp")
     @FormUrlEncoded
     fun getBannerList(@Field ("userId")id:String):Observable<BannerDataBean>
+
+
+    /**
+     * 获取新闻轮播图
+     */
+    @POST("/iexe//enController/findNewsListForApp")
+    @FormUrlEncoded
+    fun getMoreNewsList(
+        @Field("pageIndex") pageIndex: String,
+        @Field("pageSize") pageSize: String
+    ): Observable<NewsBeanDataBean>
 
 }

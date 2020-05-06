@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <View
+        android:id="@+id/view_divide"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginRight="13dp"
+        android:background="@color/view_divide"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="15dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="文章标题"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_16"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/iv_right"
+        app:layout_constraintTop_toBottomOf="@+id/view_divide" />
+
+    <ImageView
+        android:id="@+id/iv_one"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="5dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/tv_time"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/iv_two"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <ImageView
+        android:id="@+id/iv_two"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginLeft="3.5dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="3.5dp"
+        android:layout_marginBottom="5dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/tv_time"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/iv_one"
+        app:layout_constraintRight_toLeftOf="@+id/iv_three"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+
+    <ImageView
+        android:id="@+id/iv_three"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginBottom="5dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/tv_time"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/iv_two"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:text="2020.02.03"
+        android:textColor="@color/text_gray"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_count_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="阅读："
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/font_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tv_time" />
+
+    <TextView
+        android:id="@+id/tv_read_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/font_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tv_count_title" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
