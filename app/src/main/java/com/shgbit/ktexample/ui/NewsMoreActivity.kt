@@ -6,7 +6,6 @@ import android.content.Intent
 import android.os.Handler
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.chad.library.adapter.base.module.LoadMoreModuleConfig
 import com.shgbit.ktexample.R
 import com.shgbit.ktexample.adapter.NewsListAdapter
 import com.shgbit.ktexample.api.RxRestServiceApi
@@ -15,7 +14,6 @@ import com.shgbit.ktexample.bean.PageData
 import com.shgbit.ktexample.network.NewworkScheduler
 import com.shgbit.ktexample.network.RxRestClient
 import com.shgbit.ktexample.util.PLog
-import com.shgbit.ktexample.view.CustomLoadMoreView
 import com.trello.rxlifecycle2.android.ActivityEvent
 import com.trello.rxlifecycle2.kotlin.bindUntilEvent
 import kotlinx.android.synthetic.main.activity_select_layout.*
@@ -59,10 +57,11 @@ class NewsMoreActivity : BaseActivity() {
             }, 2000)
         }
 
-        val customLoadMoreView = CustomLoadMoreView()
-        customLoadMoreView.setEndTips("我是有底线的")
-        LoadMoreModuleConfig.defLoadMoreView = customLoadMoreView
-        
+        // 分页处理
+//        val customLoadMoreView = CustomLoadMoreView()
+//        customLoadMoreView.setEndTips("我是有底线的")
+//        LoadMoreModuleConfig.defLoadMoreView = customLoadMoreView
+
     }
 
     override fun initData() {

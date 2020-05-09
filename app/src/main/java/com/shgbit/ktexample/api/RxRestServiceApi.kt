@@ -52,7 +52,7 @@ interface RxRestServiceApi {
     /**
      * 获取新闻轮播图
      */
-    @POST("/iexe//enController/findNewsListForApp")
+    @POST("/iexe/enController/findNewsListForApp")
     @FormUrlEncoded
     fun getMoreNewsList(
         @Field("pageIndex") pageIndex: String,
